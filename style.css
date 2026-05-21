@@ -43,7 +43,6 @@ border-radius:10px;
 background:#00c6ff;
 color:white;
 cursor:pointer;
-transition:0.3s;
 }
 
 .start:hover{
@@ -55,8 +54,8 @@ background:#00ffcc;
 display:none;
 margin-top:10px;
 border:2px solid #00c6ff;
-border-radius:10px;
 padding:10px;
+border-radius:10px;
 }
 
 #chatLog{
@@ -100,12 +99,6 @@ border:none;
 background:#00c6ff;
 color:white;
 cursor:pointer;
-transition:0.3s;
-}
-
-.questions button:hover{
-transform:scale(1.1);
-background:#00ffcc;
 }
 
 .team{
@@ -121,7 +114,7 @@ padding:10px;
 border:1px solid #00c6ff;
 border-radius:10px;
 cursor:pointer;
-width:150px;
+width:180px;
 transition:0.3s;
 }
 
