@@ -2,21 +2,21 @@ body{
 margin:0;
 font-family:Arial;
 color:white;
-overflow:hidden;
 background:#050816;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
+overflow:hidden;
 }
 
-/* moving AI background */
+/* moving background */
 .background{
 position:absolute;
 width:200%;
 height:200%;
 background:radial-gradient(circle,#00c6ff33,#5c2d9133,#00ffcc33);
-animation:move 12s infinite linear;
+animation:move 12s linear infinite;
 }
 
 @keyframes move{
@@ -29,11 +29,11 @@ animation:move 12s infinite linear;
 position:relative;
 width:90%;
 max-width:900px;
+padding:25px;
+text-align:center;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(15px);
-padding:25px;
 border-radius:20px;
-text-align:center;
 box-shadow:0 0 30px rgba(0,255,255,0.3);
 }
 
@@ -47,13 +47,12 @@ from{text-shadow:0 0 10px #00c6ff;}
 to{text-shadow:0 0 25px #00ffcc;}
 }
 
-/* BUTTON */
 .startBtn{
-margin:10px;
 padding:10px 20px;
-background:#00c6ff;
 border:none;
 border-radius:10px;
+background:#00c6ff;
+color:white;
 cursor:pointer;
 transition:0.3s;
 }
@@ -63,37 +62,36 @@ transform:scale(1.1);
 background:#00ffcc;
 }
 
-/* CHATGPT STYLE BOX */
+/* CHAT */
 .chatBox{
-margin-top:10px;
+margin-top:15px;
+display:none;
 border:2px solid #00c6ff;
 border-radius:15px;
 padding:10px;
-display:none;
 background:rgba(0,0,0,0.3);
 }
 
-.chatLog{
+#chatLog{
 height:150px;
 overflow:auto;
 text-align:left;
 padding:5px;
 }
 
-/* input */
 .inputBox{
 display:flex;
 margin-top:10px;
 }
 
-.inputBox input{
+input{
 flex:1;
 padding:8px;
 border:none;
 border-radius:8px;
 }
 
-.inputBox button{
+button{
 margin-left:5px;
 padding:8px;
 border:none;
@@ -108,7 +106,7 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:10px;
-margin-top:15px;
+margin-top:10px;
 }
 
 .card{
@@ -117,6 +115,7 @@ border:1px solid #00c6ff;
 border-radius:10px;
 cursor:pointer;
 transition:0.3s;
+width:180px;
 }
 
 .card:hover{
