@@ -19,9 +19,15 @@ animation:move 10s linear infinite;
 }
 
 @keyframes move{
-0%{transform:translate(0,0);}
-50%{transform:translate(-150px,-150px);}
-100%{transform:translate(0,0);}
+0%{
+transform:translate(0,0);
+}
+50%{
+transform:translate(-150px,-150px);
+}
+100%{
+transform:translate(0,0);
+}
 }
 
 .container{
@@ -43,6 +49,7 @@ border-radius:10px;
 background:#00c6ff;
 color:white;
 cursor:pointer;
+transition:0.3s;
 }
 
 .start:hover{
@@ -67,6 +74,7 @@ text-align:left;
 .inputBox{
 display:flex;
 margin-top:10px;
+gap:5px;
 }
 
 input{
@@ -74,6 +82,7 @@ flex:1;
 padding:8px;
 border:none;
 border-radius:8px;
+outline:none;
 }
 
 button{
@@ -82,6 +91,11 @@ border:none;
 background:#00ffcc;
 cursor:pointer;
 border-radius:8px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
 }
 
 .questions{
