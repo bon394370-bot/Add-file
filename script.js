@@ -7,12 +7,14 @@ document.getElementById("chatLog").innerHTML =
 botActive = true;
 }
 
-// 📌 10 QUESTIONS
+// =====================
+// 📌 10 QUESTIONS FIXED
+// =====================
 function ask(type){
 
 let input=document.getElementById("userInput");
 
-const map={
+const q={
 q1:"ИИ деген не?",
 q2:"AI дизайн деген не?",
 q3:"AI қайда қолданылады?",
@@ -25,70 +27,72 @@ q9:"Қауіпсіз бе?",
 q10:"Болашағы"
 };
 
-input.value=map[type];
+input.value=q[type];
 sendMsg();
 }
 
+// =====================
+// 📌 STRICT ANSWER SYSTEM
+// =====================
 function sendMsg(){
 
 if(!botActive) return;
 
 let input=document.getElementById("userInput");
 let log=document.getElementById("chatLog");
-let sound=document.getElementById("clickSound");
 
-let text=input.value.toLowerCase();
+let text=input.value.trim();
 if(text=="") return;
-
-sound.play();
 
 log.innerHTML += "<div>Сен: "+text+"</div>";
 
 let reply="";
 
-// 🧠 10 EXACT ANSWERS
-if(text.includes("ии деген не")){
-reply="ИИ – адамның ойлауын модельдейтін жасанды интеллект 🤖";
-}
+// 🔥 EXACT MATCH (100% STABLE)
+switch(text){
 
-else if(text.includes("ai дизайн")){
-reply="AI дизайн – автомат түрде визуал, постер, логотип жасау 🎨";
-}
+case "ИИ деген не?":
+reply="ИИ – адамның ойлау қабілетін модельдейтін жасанды интеллект 🤖";
+break;
 
-else if(text.includes("қайда қолданылады")){
-reply="AI медицина, білім, бизнес және дизайн саласында қолданылады.";
-}
+case "AI дизайн деген не?":
+reply="AI дизайн – автомат түрде постер, логотип, визуал жасау 🎨";
+break;
 
-else if(text.includes("логотип")){
-reply="Иә, AI логотипті автомат түрде жасайды.";
-}
+case "AI қайда қолданылады?":
+reply="AI медицина, білім, бизнес, дизайн салаларында қолданылады.";
+break;
 
-else if(text.includes("сурет")){
-reply="Иә, AI мәтіннен әдемі сурет жасай алады 🎨";
-}
+case "Логотип":
+reply="Иә, AI логотипті автомат түрде жасай алады 🎨";
+break;
 
-else if(text.includes("видео")){
+case "Сурет":
+reply="Иә, AI мәтіннен сурет жасай алады.";
+break;
+
+case "Видео":
 reply="Иә, AI видео генерация жасай алады 🎬";
-}
+break;
 
-else if(text.includes("алмастыра")){
+case "Адамды алмастыра ма?":
 reply="Жоқ, AI адамды толық алмастырмайды, тек көмекші.";
-}
+break;
 
-else if(text.includes("пайда")){
+case "Пайда":
 reply="AI уақытты үнемдейді және жұмысты жеңілдетеді 🚀";
-}
+break;
 
-else if(text.includes("қауіпсіз")){
+case "Қауіпсіз бе?":
 reply="Иә, дұрыс қолданылса AI қауіпсіз технология.";
-}
+break;
 
-else if(text.includes("болашағы")){
+case "Болашағы":
 reply="AI болашағы өте үлкен және барлық саланы өзгертеді 🚀";
-}
+break;
 
-else{
-reply="Бұл сұрақ базаға кірмейді 🤖";
+default:
+reply="Сұрақ базаға кірмейді 🤖";
 }
 
 // typing effect
@@ -103,27 +107,13 @@ i++;
 if(i>reply.length){
 clearInterval(interval);
 
-// FINAL MESSAGE
+// final message
 setTimeout(()=>{
 log.innerHTML += "<div>Bot: Сау болыңыз 👋 Рақмет!</div>";
-},500);
+},400);
 }
 
-},12);
+},10);
 
 input.value="";
-}
-
-// 👨‍💻 ROLE SYSTEM
-function showRole(name){
-
-let data={
-a1:"AI зерттеуші 🤖",
-a2:"Креатив дизайнер 🎨",
-a3:"Идея авторы 🧠",
-a4:"Developer ⚙️",
-a5:"Project manager 🚀"
-};
-
-document.getElementById("infoBox").innerHTML=data[name];
 }
