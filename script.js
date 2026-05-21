@@ -2,50 +2,39 @@ let botActive = false;
 
 function startBot(){
 document.getElementById("chatBox").style.display = "block";
-
 document.getElementById("chatLog").innerHTML =
-"<div>Bot: Сәлем 🤖 Мен сіздің AI көмекшімін!</div>";
-
+"<div>Bot: Сәлем 🤖 Мен дайынмын!</div>";
 botActive = true;
 }
 
-// ✅ FIX: сұрақты input-қа жазып, автомат жіберу
 function ask(type){
 
-let input = document.getElementById("userInput");
+let input=document.getElementById("userInput");
 
-let text = "";
+let map={
+q1:"ИИ деген не?",
+q2:"AI дизайн",
+q3:"Қайда қолданылады?",
+q4:"Логотип",
+q5:"AI болашағы",
+q6:"Сен не істейсің?",
+q7:"Постер",
+q8:"Дизайн",
+q9:"AI адамды алмастыра ма?",
+q10:"Қауіпсіз бе?",
+q11:"Мысал",
+q12:"Үйрену",
+q13:"Сурет",
+q14:"Видео",
+q15:"Пайда",
+q16:"Студент",
+q17:"Дизайнер",
+q18:"Салалар",
+q19:"Қазіргі AI",
+q20:"Қорытынды"
+};
 
-switch(type){
-
-case "q1": text = "ИИ деген не?"; break;
-case "q2": text = "AI дизайн қалай жұмыс істейді?"; break;
-case "q3": text = "AI қайда қолданылады?"; break;
-case "q4": text = "Логотип жасай ма?"; break;
-case "q5": text = "AI болашағы қандай?"; break;
-
-case "q6": text = "Сен не істейсің?"; break;
-case "q7": text = "Постер жасай ма?"; break;
-case "q8": text = "Дизайн деген не?"; break;
-case "q9": text = "AI адамды алмастыра ма?"; break;
-case "q10": text = "AI қауіпсіз бе?"; break;
-
-case "q11": text = "Мысал келтір"; break;
-case "q12": text = "AI қалай үйренеді?"; break;
-case "q13": text = "AI сурет сала ма?"; break;
-case "q14": text = "AI видео жасай ма?"; break;
-case "q15": text = "AI пайдасы"; break;
-
-case "q16": text = "Студенттерге пайдасы"; break;
-case "q17": text = "Дизайнерлерге әсері"; break;
-case "q18": text = "AI салалары"; break;
-case "q19": text = "Қазіргі AI"; break;
-case "q20": text = "Қорытынды"; break;
-}
-
-input.value = text;
-
-// автомат жіберу
+input.value=map[type];
 sendMsg();
 }
 
@@ -53,57 +42,60 @@ function sendMsg(){
 
 if(!botActive) return;
 
-let input = document.getElementById("userInput").value.toLowerCase();
-let log = document.getElementById("chatLog");
+let input=document.getElementById("userInput");
+let log=document.getElementById("chatLog");
+let sound=document.getElementById("clickSound");
 
-if(input=="") return;
+let text=input.value.toLowerCase();
+if(text=="") return;
 
-log.innerHTML += "<div>Сен: "+input+"</div>";
+sound.play();
 
-let reply = "";
+log.innerHTML += "<div>Сен: "+text+"</div>";
 
-// 🧠 SMART ANSWERS
-if(input.includes("сәлем")){
-reply = "Сәлем! 🤖 Мен AI көмекшімін.";
-}
-else if(input.includes("дизайн")){
-reply = "AI дизайн логотип, постер және визуал контент жасайды 🎨";
-}
-else if(input.includes("не істейсің")){
-reply = "Мен AI және дизайн туралы сұрақтарға жауап беремін.";
-}
-else if(input.includes("рахмет")){
-reply = "Рақмет! 😊 Көмектесе алғаныма қуаныштымын.";
-}
-else if(input.includes("логотип")){
-reply = "Иә, AI бірнеше секундта логотип жасай алады.";
-}
-else if(input.includes("постер")){
-reply = "Иә, AI әдемі постер жасай алады 🎨";
-}
-else{
-reply = "Мен тек AI дизайн тақырыбында жауап беремін 🤖";
-}
+let reply="";
+
+// 🧠 AI RESPONSES
+if(text.includes("сәлем")) reply="Сәлем! 🤖";
+else if(text.includes("дизайн")) reply="AI дизайн жасайды 🎨";
+else if(text.includes("логотип")) reply="Иә, логотип жасайды";
+else if(text.includes("постер")) reply="Иә, постер жасайды 🎨";
+else if(text.includes("рахмет")) reply="Рақмет! 😊";
+else reply="Мен тек AI дизайн туралы жауап беремін 🤖";
 
 // typing effect
-let i = 0;
-let div = document.createElement("div");
+let i=0;
+let div=document.createElement("div");
 log.appendChild(div);
 
-let interval = setInterval(()=>{
-div.innerHTML = "Bot: " + reply.substring(0,i);
+let interval=setInterval(()=>{
+div.innerHTML="Bot: "+reply.substring(0,i);
 i++;
 
-if(i > reply.length){
+if(i>reply.length){
 clearInterval(interval);
 
-// 🔥 FIXED FINAL MESSAGE
+// 🔥 FINAL MESSAGE (FIXED)
 setTimeout(()=>{
+log.innerHTML += "<div>Bot: Тағы сұрағыңыз бар ма? 😊</div>";
 log.innerHTML += "<div>Bot: Сау болыңыз 👋 Рақмет!</div>";
-},600);
+},500);
 }
 
 },15);
 
-document.getElementById("userInput").value = "";
+input.value="";
+}
+
+function info(name){
+
+let data={
+a1:"AI зерттеуші",
+a2:"Креатив дизайнер",
+a3:"AI қолданушы",
+a4:"Техникалық бағыт",
+a5:"Шығармашылық идея"
+};
+
+document.getElementById("infoBox").innerHTML=data[name];
 }
