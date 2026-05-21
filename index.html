@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ИИ арқылы визуалды дизайн әлемі</title>
+<title>AI Visual Design</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<div class="background"></div>
 
 <div class="container">
 
@@ -15,10 +17,23 @@
 
 <h1>ИИ арқылы визуалды дизайн әлемі</h1>
 
-<p class="desc">
-Жасанды интеллект шығармашылық пен технологияны біріктіретін заманауи құрал.
-</p>
+<p class="desc">AI + Design = Future Creativity</p>
 
+<!-- START BOT -->
+<button class="startBtn" onclick="startBot()">START AI BOT</button>
+
+<div id="chatBox" class="chatBox">
+
+<div id="chatLog" class="chatLog"></div>
+
+<div class="inputBox">
+<input id="userInput" placeholder="Жаз..." />
+<button onclick="sendMsg()">➤</button>
+</div>
+
+</div>
+
+<!-- TEAM -->
 <div class="team">
 
 <div class="card" onclick="showInfo('a1')">Азаматұлы Али</div>
@@ -31,11 +46,9 @@
 
 <div id="infoBox" class="infoBox">Адамды таңдаңыз 👆</div>
 
-<div class="footer">
-© 2026 ИИ арқылы визуалды дизайн әлемі
 </div>
 
-</div>
+<audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
 <script src="script.js"></script>
 
