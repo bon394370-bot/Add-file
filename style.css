@@ -3,11 +3,11 @@ margin:0;
 font-family:Arial;
 background:#050816;
 color:white;
-overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
+overflow:hidden;
 }
 
 .background{
@@ -52,8 +52,8 @@ border:none;
 border-radius:10px;
 background:#00c6ff;
 cursor:pointer;
-transition:0.3s;
 color:white;
+transition:0.3s;
 }
 
 .startBtn:hover{
@@ -75,6 +75,7 @@ background:rgba(0,0,0,0.3);
 height:150px;
 overflow:auto;
 text-align:left;
+padding:5px;
 }
 
 .inputBox{
@@ -113,7 +114,6 @@ border-radius:8px;
 background:#00c6ff;
 color:white;
 cursor:pointer;
-transition:0.3s;
 }
 
 .questions button:hover{
