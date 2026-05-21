@@ -3,43 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Visual Design</title>
+<title>AI Visual Design World</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="background"></div>
+<div class="bg"></div>
 
 <div class="container">
 
-<div class="icon">🤖🎨⚡</div>
+<h1>🤖 ИИ арқылы визуалды дизайн әлемі</h1>
+<p>PRO AI Assistant System</p>
 
-<h1>ИИ арқылы визуалды дизайн әлемі</h1>
+<button class="start" onclick="startBot()">START BOT</button>
 
-<p class="desc">Interactive AI Assistant Project</p>
+<div id="chatBox" class="chat">
 
-<button class="startBtn" onclick="startBot()">START AI ASSISTANT</button>
-
-<!-- CHAT -->
-<div id="chatBox" class="chatBox">
 <div id="chatLog"></div>
 
 <div class="inputBox">
 <input id="userInput" placeholder="Сұрақ жаз..." />
 <button onclick="sendMsg()">➤</button>
 </div>
+
 </div>
 
-<!-- QUESTIONS -->
-<h3>📌 Дайын сұрақтар</h3>
+<h2>📌 Дайын сұрақтар</h2>
 
 <div class="questions">
 
 <button onclick="ask('q1')">ИИ деген не?</button>
 <button onclick="ask('q2')">AI дизайн</button>
 <button onclick="ask('q3')">Қайда қолданылады?</button>
-<button onclick="ask('q4')">Логотип жасай ма?</button>
+<button onclick="ask('q4')">Логотип</button>
 <button onclick="ask('q5')">AI болашағы</button>
 
 <button onclick="ask('q6')">Сен не істейсің?</button>
@@ -62,20 +59,19 @@
 
 </div>
 
-<!-- TEAM -->
-<h3>👨‍💻 Топ мүшелері</h3>
+<h2>👨‍💻 Топ мүшелері</h2>
 
 <div class="team">
 
-<div class="card" onclick="showInfo('a1')">Азаматұлы Али</div>
-<div class="card" onclick="showInfo('a2')">Аманбай Жанель</div>
-<div class="card" onclick="showInfo('a3')">Таңат Айбек</div>
-<div class="card" onclick="showInfo('a4')">Бейсенбай Рауан</div>
-<div class="card" onclick="showInfo('a5')">Омар Сұлужан</div>
+<div class="card" onclick="info('a1')">Азаматұлы Али</div>
+<div class="card" onclick="info('a2')">Аманбай Жанель</div>
+<div class="card" onclick="info('a3')">Таңат Айбек</div>
+<div class="card" onclick="info('a4')">Бейсенбай Рауан</div>
+<div class="card" onclick="info('a5')">Омар Сұлужан</div>
 
 </div>
 
-<div id="infoBox" class="infoBox">Адамды таңдаңыз 👆</div>
+<div id="infoBox" class="infoBox">Адамды басыңыз 👆</div>
 
 </div>
 
