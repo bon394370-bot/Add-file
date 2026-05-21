@@ -1,16 +1,15 @@
 body{
 margin:0;
 font-family:Arial;
-color:white;
 background:#050816;
+color:white;
+overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
-overflow:hidden;
 }
 
-/* moving background */
 .background{
 position:absolute;
 width:200%;
@@ -27,9 +26,9 @@ animation:move 12s linear infinite;
 
 .container{
 position:relative;
-width:90%;
-max-width:900px;
-padding:25px;
+width:92%;
+max-width:950px;
+padding:20px;
 text-align:center;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(15px);
@@ -52,9 +51,9 @@ padding:10px 20px;
 border:none;
 border-radius:10px;
 background:#00c6ff;
-color:white;
 cursor:pointer;
 transition:0.3s;
+color:white;
 }
 
 .startBtn:hover{
@@ -64,8 +63,8 @@ background:#00ffcc;
 
 /* CHAT */
 .chatBox{
-margin-top:15px;
 display:none;
+margin-top:10px;
 border:2px solid #00c6ff;
 border-radius:15px;
 padding:10px;
@@ -76,7 +75,6 @@ background:rgba(0,0,0,0.3);
 height:150px;
 overflow:auto;
 text-align:left;
-padding:5px;
 }
 
 .inputBox{
@@ -92,20 +90,42 @@ border-radius:8px;
 }
 
 button{
-margin-left:5px;
 padding:8px;
 border:none;
 background:#00ffcc;
-border-radius:8px;
 cursor:pointer;
+border-radius:8px;
+}
+
+/* QUESTIONS */
+.questions{
+display:flex;
+flex-wrap:wrap;
+gap:5px;
+justify-content:center;
+margin-top:10px;
+}
+
+.questions button{
+padding:6px;
+border:none;
+border-radius:8px;
+background:#00c6ff;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.questions button:hover{
+transform:scale(1.1);
 }
 
 /* TEAM */
 .team{
 display:flex;
 flex-wrap:wrap;
-justify-content:center;
 gap:10px;
+justify-content:center;
 margin-top:10px;
 }
 
@@ -114,8 +134,8 @@ padding:10px;
 border:1px solid #00c6ff;
 border-radius:10px;
 cursor:pointer;
+width:170px;
 transition:0.3s;
-width:180px;
 }
 
 .card:hover{
@@ -124,7 +144,7 @@ background:rgba(0,255,255,0.2);
 }
 
 .infoBox{
-margin-top:15px;
+margin-top:10px;
 padding:10px;
 border:2px solid #00c6ff;
 border-radius:10px;
