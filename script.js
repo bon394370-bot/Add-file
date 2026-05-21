@@ -7,17 +7,15 @@ document.getElementById("chatLog").innerHTML =
 botActive = true;
 }
 
-// =====================
-// 📌 10 QUESTIONS FIXED
-// =====================
+// QUESTIONS
 function ask(type){
 
 let input=document.getElementById("userInput");
 
-const q={
+const map={
 q1:"ИИ деген не?",
-q2:"AI дизайн деген не?",
-q3:"AI қайда қолданылады?",
+q2:"AI дизайн",
+q3:"Қайда қолданылады?",
 q4:"Логотип",
 q5:"Сурет",
 q6:"Видео",
@@ -27,75 +25,63 @@ q9:"Қауіпсіз бе?",
 q10:"Болашағы"
 };
 
-input.value=q[type];
+input.value=map[type];
 sendMsg();
 }
 
-// =====================
-// 📌 STRICT ANSWER SYSTEM
-// =====================
 function sendMsg(){
 
 if(!botActive) return;
 
 let input=document.getElementById("userInput");
 let log=document.getElementById("chatLog");
+let sound=document.getElementById("clickSound");
 
 let text=input.value.trim();
 if(text=="") return;
+
+sound.play();
 
 log.innerHTML += "<div>Сен: "+text+"</div>";
 
 let reply="";
 
-// 🔥 EXACT MATCH (100% STABLE)
-switch(text){
-
-case "ИИ деген не?":
-reply="ИИ – адамның ойлау қабілетін модельдейтін жасанды интеллект 🤖";
-break;
-
-case "AI дизайн деген не?":
-reply="AI дизайн – автомат түрде постер, логотип, визуал жасау 🎨";
-break;
-
-case "AI қайда қолданылады?":
-reply="AI медицина, білім, бизнес, дизайн салаларында қолданылады.";
-break;
-
-case "Логотип":
-reply="Иә, AI логотипті автомат түрде жасай алады 🎨";
-break;
-
-case "Сурет":
-reply="Иә, AI мәтіннен сурет жасай алады.";
-break;
-
-case "Видео":
-reply="Иә, AI видео генерация жасай алады 🎬";
-break;
-
-case "Адамды алмастыра ма?":
-reply="Жоқ, AI адамды толық алмастырмайды, тек көмекші.";
-break;
-
-case "Пайда":
-reply="AI уақытты үнемдейді және жұмысты жеңілдетеді 🚀";
-break;
-
-case "Қауіпсіз бе?":
-reply="Иә, дұрыс қолданылса AI қауіпсіз технология.";
-break;
-
-case "Болашағы":
-reply="AI болашағы өте үлкен және барлық саланы өзгертеді 🚀";
-break;
-
-default:
-reply="Сұрақ базаға кірмейді 🤖";
+// ANSWERS
+if(text.includes("ии")){
+reply="ИИ – адамның ойлауын модельдейтін жасанды интеллект 🤖";
+}
+else if(text.includes("ai дизайн")){
+reply="AI дизайн – автомат түрде визуал жасау 🎨";
+}
+else if(text.includes("қайда")){
+reply="AI медицина, білім, бизнес және дизайнда қолданылады.";
+}
+else if(text.includes("логотип")){
+reply="Иә, AI логотип жасайды.";
+}
+else if(text.includes("сурет")){
+reply="Иә, AI сурет жасай алады 🎨";
+}
+else if(text.includes("видео")){
+reply="Иә, AI видео генерация жасайды 🎬";
+}
+else if(text.includes("алмастыра")){
+reply="Жоқ, AI адамды толық алмастырмайды.";
+}
+else if(text.includes("пайда")){
+reply="AI уақытты үнемдейді 🚀";
+}
+else if(text.includes("қауіпсіз")){
+reply="Иә, дұрыс қолданылса қауіпсіз.";
+}
+else if(text.includes("болашағы")){
+reply="AI болашағы өте үлкен 🚀";
+}
+else{
+reply="Бұл сұрақ базаға кірмейді 🤖";
 }
 
-// typing effect
+// typing
 let i=0;
 let div=document.createElement("div");
 log.appendChild(div);
@@ -107,7 +93,6 @@ i++;
 if(i>reply.length){
 clearInterval(interval);
 
-// final message
 setTimeout(()=>{
 log.innerHTML += "<div>Bot: Сау болыңыз 👋 Рақмет!</div>";
 },400);
@@ -116,4 +101,18 @@ log.innerHTML += "<div>Bot: Сау болыңыз 👋 Рақмет!</div>";
 },10);
 
 input.value="";
+}
+
+// ROLE SYSTEM
+function showRole(name){
+
+let data={
+a1:"Оразбек Аяулым – AI зерттеуші 🤖",
+a2:"Сафарова Айгерім – Дизайнер 🎨",
+a3:"Балабек Жасұлан – Идея авторы 🧠",
+a4:"Бейсенбай Рауан – Developer ⚙️",
+a5:"Сұлу – Project manager 🚀"
+};
+
+document.getElementById("infoBox").innerHTML=data[name];
 }
