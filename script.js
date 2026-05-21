@@ -1,3 +1,5 @@
+let selected = "";
+
 function startBot(){
 document.getElementById("chatBox").style.display = "block";
 }
@@ -10,38 +12,46 @@ let sound = document.getElementById("clickSound");
 
 if(input=="") return;
 
-// sound
 sound.play();
 
-// user msg
-log.innerHTML += "<div style='color:#00ffcc'>Сен: "+input+"</div>";
+// user
+log.innerHTML += "<div>Сен: "+input+"</div>";
 
-// typing effect
-let reply = "жазып жатыр...";
-let botDiv = document.createElement("div");
-botDiv.style.color = "white";
-log.appendChild(botDiv);
-
-setTimeout(()=>{
+let bot = "";
 
 if(input.toLowerCase().includes("сәлем")){
-reply = "Сәлем! 🤖 Мен AI көмекшімін.";
+bot = "Сәлем! 🤖 Мен сіздің AI көмекшіңізбін.";
 }
 else if(input.toLowerCase().includes("дизайн")){
-reply = "AI дизайн логотип, постер және идея жасайды 🎨";
+bot = "AI дизайн логотип, постер және визуал контент жасайды 🎨";
 }
 else if(input.toLowerCase().includes("рахмет")){
-reply = "Әрқашан көмектесемін 😊";
+bot = "Әрқашан көмектесуге дайынмын 😊";
 }
 else{
-reply = "Мен тек AI дизайн туралы көмектесемін 🤖";
+bot = "Кешіріңіз, мен тек AI дизайн тақырыбында көмектесе аламын 🤖";
 }
 
-botDiv.innerHTML = "Bot: "+reply;
+// typing effect
+let i = 0;
+let text = "Bot: ";
 
-},1000);
+let temp = document.createElement("div");
+log.appendChild(temp);
 
-// clear input
+let interval = setInterval(()=>{
+temp.innerHTML = text + bot.substring(0,i);
+i++;
+if(i > bot.length){
+clearInterval(interval);
+
+setTimeout(()=>{
+log.innerHTML += "<div>Bot: Тағы сұрағыңыз бар ма? 😊</div>";
+},600);
+
+}
+},20);
+
 document.getElementById("userInput").value="";
 }
 
@@ -50,11 +60,11 @@ function showInfo(name){
 
 let info="";
 
-if(name=="a1") info="AI дизайн және идея генерациясы";
-if(name=="a2") info="Шығармашылық визуал контент";
-if(name=="a3") info="AI құралдарын зерттеу";
-if(name=="a4") info="Техникалық AI анализ";
-if(name=="a5") info="Креативті дизайн идеялары";
+if(name=="a1") info="AI және дизайн идеяларын зерттейді.";
+if(name=="a2") info="Креативті визуал контент жасайды.";
+if(name=="a3") info="AI құралдарын қолданады.";
+if(name=="a4") info="Техникалық AI бағытында жұмыс істейді.";
+if(name=="a5") info="Шығармашылық дизайн идеялары.";
 
 document.getElementById("infoBox").innerHTML=info;
 }
