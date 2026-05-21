@@ -37,7 +37,7 @@ let input=document.getElementById("userInput");
 let log=document.getElementById("chatLog");
 let sound=document.getElementById("clickSound");
 
-let text=input.value.trim();
+let text=input.value.trim().toLowerCase();
 if(text=="") return;
 
 sound.play();
@@ -107,12 +107,12 @@ input.value="";
 function showRole(name){
 
 let data={
-a1:"Аманбай Жанель – AI зерттеуші 🤖",
-a2:"Азаматұлы Али  – Дизайнер 🎨",
-a3:"Омар Сұлужан – Идея авторы 🧠",
-a4:"Бейсенбай Рауан – Developer ⚙️",
-a5:"Таңат Айбек  – Project manager 🚀"
-a6:"Абдукарим Рамазан  – Project manager 🚀"
+a1:"Аманбай Жанель 🤖",
+a2:"Азаматұлы Али 🎨",
+a3:"Омар Сұлужан 🧠",
+a4:"Таңат Айбек 🚀",
+a5:"Бейсенбай Рауан ⚙️",
+a6:"Абдукарим Рамазан 🚀"
 };
 
 document.getElementById("infoBox").innerHTML=data[name];
