@@ -107,11 +107,12 @@ input.value="";
 function showRole(name){
 
 let data={
-a1:"Оразбек Аяулым – AI зерттеуші 🤖",
-a2:"Сафарова Айгерім – Дизайнер 🎨",
-a3:"Балабек Жасұлан – Идея авторы 🧠",
+a1:"Аманбай Жанель – AI зерттеуші 🤖",
+a2:"Азаматұлы Али  – Дизайнер 🎨",
+a3:"Омар Сұлужан – Идея авторы 🧠",
 a4:"Бейсенбай Рауан – Developer ⚙️",
-a5:"Сұлу – Project manager 🚀"
+a5:"Таңат Айбек  – Project manager 🚀"
+a6:"Абдукарим Рамазан  – Project manager 🚀"
 };
 
 document.getElementById("infoBox").innerHTML=data[name];
