@@ -14,7 +14,7 @@
 <div class="container">
 
 <h1>🤖 ИИ арқылы визуалды дизайн әлемі</h1>
-<p>PRO AI Assistant System</p>
+<p>Interactive AI Assistant</p>
 
 <button class="start" onclick="startBot()">START BOT</button>
 
@@ -23,13 +23,13 @@
 <div id="chatLog"></div>
 
 <div class="inputBox">
-<input id="userInput" placeholder="Сұрақ жаз..." />
+<input id="userInput" placeholder="Сұрақ жазыңыз..." />
 <button onclick="sendMsg()">➤</button>
 </div>
 
 </div>
 
-<h2>📌 Дайын сұрақтар</h2>
+<h2>📌 10 Сұрақ</h2>
 
 <div class="questions">
 
@@ -37,25 +37,13 @@
 <button onclick="ask('q2')">AI дизайн</button>
 <button onclick="ask('q3')">Қайда қолданылады?</button>
 <button onclick="ask('q4')">Логотип</button>
-<button onclick="ask('q5')">AI болашағы</button>
+<button onclick="ask('q5')">Сурет</button>
 
-<button onclick="ask('q6')">Сен не істейсің?</button>
-<button onclick="ask('q7')">Постер</button>
-<button onclick="ask('q8')">Дизайн</button>
-<button onclick="ask('q9')">AI адамды алмастыра ма?</button>
-<button onclick="ask('q10')">Қауіпсіз бе?</button>
-
-<button onclick="ask('q11')">Мысал</button>
-<button onclick="ask('q12')">Үйрену</button>
-<button onclick="ask('q13')">Сурет</button>
-<button onclick="ask('q14')">Видео</button>
-<button onclick="ask('q15')">Пайда</button>
-
-<button onclick="ask('q16')">Студент</button>
-<button onclick="ask('q17')">Дизайнер</button>
-<button onclick="ask('q18')">Салалар</button>
-<button onclick="ask('q19')">Қазіргі AI</button>
-<button onclick="ask('q20')">Қорытынды</button>
+<button onclick="ask('q6')">Видео</button>
+<button onclick="ask('q7')">Адамды алмастыра ма?</button>
+<button onclick="ask('q8')">Пайда</button>
+<button onclick="ask('q9')">Қауіпсіз бе?</button>
+<button onclick="ask('q10')">Болашағы</button>
 
 </div>
 
@@ -63,11 +51,11 @@
 
 <div class="team">
 
-<div class="card" onclick="info('a1')">Азаматұлы Али</div>
-<div class="card" onclick="info('a2')">Аманбай Жанель</div>
-<div class="card" onclick="info('a3')">Таңат Айбек</div>
-<div class="card" onclick="info('a4')">Бейсенбай Рауан</div>
-<div class="card" onclick="info('a5')">Омар Сұлужан</div>
+<div class="card" onclick="showRole('a1')">Али</div>
+<div class="card" onclick="showRole('a2')">Жанель</div>
+<div class="card" onclick="showRole('a3')">Айбек</div>
+<div class="card" onclick="showRole('a4')">Рауан</div>
+<div class="card" onclick="showRole('a5')">Сұлужан</div>
 
 </div>
 
@@ -78,6 +66,5 @@
 <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
 <script src="script.js"></script>
-
 </body>
 </html>
